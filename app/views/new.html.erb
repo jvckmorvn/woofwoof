@@ -1,0 +1,6 @@
+<h1>Booking</h1>
+
+<%= simple_form_for [@dog, @booking] do |f| %>
+  <%= f.association :user %>
+  <%= f.submit %>
+<% end %>
