@@ -5,4 +5,8 @@ class DogsControllerTest < ActionDispatch::IntegrationTest
     get dogs_index_url
     assert_response :success
   end
+
+  # test "the truth" do
+  #   assert true
+  # end
 end
