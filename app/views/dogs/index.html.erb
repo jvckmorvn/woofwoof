@@ -1,13 +1,26 @@
-<h1>Dogs#index</h1>
-<div class="container">
-  <div class="row">
-    <div class="col-8">
-      <% @dogs.each do |dog| %>
-        <%= dog %>
-      <% end %>
-    </div>
-    <div class="col-4">
-      <%= link_to "Add a new dog", new_dog_path %>
+<div class="mt-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <h1>Browse dogs</h1>
+        <% @dogs.each do |dog| %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(#{dog.photos[0]})">
+            <%= link_to dog.name, dog_path(dog), class: "text-decoration-none" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-4 mt-5">
+        <%= simple_form_for @dog do |f| %>
+          <h4 class="mb-3">Add a new dog</h4>
+          <%= f.input :name %>
+          <%= f.input :breed %>
+          <%= f.input :age %>
+          <%= f.input :location %>
+          <%= f.collection_radio_buttons :sex, [[false, 'Male'], [true, 'Female']], :first, :last %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+          <%= f.button :submit, class: "btn btn-success", value: "Add dog" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
