@@ -1,5 +1,4 @@
 class DogsController < ApplicationController
-
   def index
     @dogs = Dog.all
   end
@@ -15,6 +14,10 @@ class DogsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @dog = Dog.find(params[:id])
   end
 
   private
