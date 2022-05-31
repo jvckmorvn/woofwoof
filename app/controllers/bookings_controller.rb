@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
     @dog = Dog.find(params[:dog_id])
     @booking = @dog.bookings.new(booking_params)
     @booking.user = current_user
+  end
 
   def destroy
     @booking = Booking.find(params[:id])
@@ -16,11 +17,9 @@ class BookingsController < ApplicationController
     redirect_to dog_path(@booking.dog), status: :see_other
   end
 
-
   private
 
   def booking_params
       params.require(:booking).permit(:dog_id, :start_date, :end_date)
   end
-
 end
