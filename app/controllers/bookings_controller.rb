@@ -16,11 +16,9 @@ class BookingsController < ApplicationController
     redirect_to dog_path(@booking.dog), status: :see_other
   end
 
-
   private
 
   def booking_params
       params.require(:booking).permit(:dog_id, :start_date, :end_date)
   end
-
 end
