@@ -1,0 +1,13 @@
+<h1>Dogs#index</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <% @dogs.each do |dog| %>
+        <%= dog %>
+      <% end %>
+    </div>
+    <div class="col-4">
+      <%= link_to "Add a new dog", dogs_new_path %>
+    </div>
+  </div>
+</div>
