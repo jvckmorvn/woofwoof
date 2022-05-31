@@ -1,5 +1,13 @@
 <h1>Dogs#index</h1>
-<% @dogs.each do |dog| %>
-  <%= # %>
-<% end %>
-<p>Find me in app/views/dogs/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <% @dogs.each do |dog| %>
+        <%= dog %>
+      <% end %>
+    </div>
+    <div class="col-4">
+      <%= link_to "Add a new dog", dogs_new_path %>
+    </div>
+  </div>
+</div>
