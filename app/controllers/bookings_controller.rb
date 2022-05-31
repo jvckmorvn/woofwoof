@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   def new
-    @dog = Dog.find(params[:dog_id])
-    @booking = @dog.bookings.new
+    @booking = Booking.new
+    @booking.dog = Dog.find(params[:dog_id])
     @booking.user = current_user
   end
 
