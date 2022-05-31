@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
     @dog = Dog.find(params[:dog_id])
     @booking = @dog.bookings.new(booking_params)
     @booking.user = current_user
+  end
 
   def destroy
     @booking = Booking.find(params[:id])
