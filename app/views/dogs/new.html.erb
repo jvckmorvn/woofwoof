@@ -4,9 +4,9 @@
   <%= f.input :name %>
   <%= f.input :breed %>
   <%= f.input :age %>
-  <%= f.input :sex %>
   <%= f.input :location %>
   <%= f.input :breed %>
+  <%= f.collection_radio_buttons :sex, [[false, 'Male'], [true, 'Female']], :first, :last %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
