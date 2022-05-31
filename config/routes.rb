@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get	"dogs", to: "dogs#index"
   post "dogs", to: "dogs#create"
+  get "bookings/new", to: "bookings#new"
+  post "bookings", to: "bookings#create"
+  delete "bookings/:id", to: "bookings#destroy"
 end
