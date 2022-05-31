@@ -9,7 +9,8 @@ class DogsController < ApplicationController
 
   def create
     @dog = Dog.new(dog_params)
-    if @dog.save
+    @dog.user = current_user
+    if @dog.save!
       redirect_to dog_path(@dog)
     else
       render :new, status: :unprocessable_entity
@@ -23,6 +24,6 @@ class DogsController < ApplicationController
   private
 
   def dog_params
-    params.require(:dog).permit(:name, :breed, :age, :sex, :location, :photos)
+    params.require(:dog).permit(:name, :breed, :age, :sex, :location, photos: [])
   end
 end
