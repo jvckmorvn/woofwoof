@@ -1,6 +1,6 @@
 class DogsController < ApplicationController
   def index
-      @dogs = Dog.all
+    @dogs = Dog.all
   end
 
   def create
@@ -14,6 +14,7 @@ class DogsController < ApplicationController
 
   def show
     @dog = Dog.find(params[:id])
+    @booking = Booking.new
   end
 
   private
