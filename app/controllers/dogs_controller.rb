@@ -1,4 +1,8 @@
 class DogsController < ApplicationController
+  def index
+      @dogs = Dog.all
+  end
+
   def create
     @dog = Dog.new(dog_params)
     if @dog.save
@@ -6,6 +10,10 @@ class DogsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @dog = Dog.find(params[:id])
   end
 
   private
