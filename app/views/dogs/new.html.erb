@@ -1,11 +1,13 @@
-<h1>Add a new dog</h1>
+<div class="new-dog">
+  <h1>Add a new dog</h1>
 
-<%= simple_form_for @dog do |f| %>
-  <%= f.input :name %>
-  <%= f.input :breed %>
-  <%= f.input :age %>
-  <%= f.input :location %>
-  <%= f.collection_radio_buttons :sex, [[false, 'Male'], [true, 'Female']], :first, :last %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.button :submit, class: "btn btn-primary" %>
-<% end %>
+  <%= simple_form_for @dog do |f| %>
+    <%= f.input :name %>
+    <%= f.input :breed %>
+    <%= f.input :age %>
+    <%= f.input :location %>
+    <%= f.collection_radio_buttons :sex, [[false, 'Male'], [true, 'Female']], :first, :last %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+</div>
