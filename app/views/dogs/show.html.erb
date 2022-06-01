@@ -1,26 +1,30 @@
-<div class="container">
-  <div class="row">
-    <div class = "col-8">
-     <h1><%= @dog.name %> </h1>
-      <p>
-        <% @dog.photos.each do |photo| %>
-         <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-        <% end %>
-      </p>
-      <p>Name: <%= @dog.name %></p>
-      <p>Breed: <%= @dog.breed %></p>
-      <p>Age: <%= @dog.age %></p>
-      <p>Sex: <%= @dog.sex ? "Female" : "Male" %></p>
-      <p>Location: <%= @dog.location %></p>
-    </div>
+<div class="mt-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <h1><%= @dog.name %> </h1>
+        <p>
+          <% @dog.photos.each do |photo| %>
+           <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+          <% end %>
+        </p>
+        <p>Name: <%= @dog.name %></p>
+        <p>Breed: <%= @dog.breed %></p>
+        <p>Age: <%= @dog.age %></p>
+        <p>Sex: <%= @dog.sex ? "Female" : "Male" %></p>
+        <p>Location: <%= @dog.location %></p>
+        <p><%= link_to "Delete",dog_path(@dog), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+      </div>
 
-    <div class = "col-4">
-      <h1>Create new booking</h1>
-        <%= simple_form_for([@dog, @booking]) do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <%= f.button :submit, class: "btn btn-primary" %>
-        <% end %>
+      <div class="col-4 mt-5">
+        <h4 class="mb-3">Create new booking</h4>
+          <%= simple_form_for [@dog, @booking] do |f| %>
+          <%= f.input :start_date %>
+          <%= f.input :end_date %>
+          <%= f.button :submit, class: "btn btn-primary" %>
+          <% end %>
+          <p class="mt-3" id="notice"><%= notice %></p>
+      </div>
     </div>
   </div>
 </div>

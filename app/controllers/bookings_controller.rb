@@ -1,14 +1,10 @@
 class BookingsController < ApplicationController
-  def new
-    @booking = Booking.new
-  end
-
   def create
     @booking = Booking.new(booking_params)
     @booking.dog = Dog.find(params[:dog_id])
     @booking.user = current_user
     if @booking.save!
-      redirect_to dogs_path
+      redirect_to dog_path(@booking.dog), notice: "Booking successful!"
     else
       render :new, :unprocessable_entity
     end
@@ -23,6 +19,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-      params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
