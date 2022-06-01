@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
     @booking.dog = Dog.find(params[:dog_id])
     @booking.user = current_user
     if @booking.save!
-      redirect_to dog_path(@booking.dog), notice: "Booking successful!"
+      redirect_to dashboards_path
     else
       render :new, :unprocessable_entity
     end

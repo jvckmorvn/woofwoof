@@ -1,7 +1,20 @@
-<h1>Dashboard</h1>
-
-<h2><%= current_user.username %></h2>
-  <% current_user.bookings.each do |booking| %>
-     <%= booking.start_date %>
-     <%= booking.end_date %>
-  <% end %>
+<div class="mt-3">
+  <div class="container">
+    <h1>My Dashboard</h1>
+    <div class="row">
+      <div class="col-6">
+        <h3>My Dogs</h3>
+        <% current_user.dogs.each do |dog| %>
+          <%= dog.name %>
+        <% end %>
+      </div>
+      <div class="col-6">
+        <h3>My Bookings</h3>
+        <% current_user.bookings.each do |booking| %>
+          <%= booking.start_date %>
+          <%= booking.end_date %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

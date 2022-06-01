@@ -8,17 +8,17 @@
         <% end %>
       </p>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Name: <%= @dog.name %></li>
-        <li class="list-group-item">Breed: <%= @dog.breed %></li>
-        <li class="list-group-item">Age: <%= @dog.age %></li>
-        <li class="list-group-item">Sex: <%= @dog.sex ? "Female" : "Male" %></li>
-        <li class="list-group-item">Location: <%= @dog.location %></li>
+        <li class="list-group-item"><strong>Name:</strong> <%= @dog.name %></li>
+        <li class="list-group-item"><strong>Breed:</strong> <%= @dog.breed %></li>
+        <li class="list-group-item"><strong>Age:</strong> <%= @dog.age %></li>
+        <li class="list-group-item"><strong>Sex:</strong> <%= @dog.sex ? "Female" : "Male" %></li>
+        <li class="list-group-item"><strong>Location:</strong> <%= @dog.location %></li>
       </ul>
       <br>
       <p><%= link_to "Delete",dog_path(@dog), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-dog-btn"  %></p>
     </div>
 
-    <div class="col-4">
+    <div class="col-4 mt-5">
       <h4>Create new booking</h4>
         <%= simple_form_for [@dog, @booking] do |f| %>
         <%= f.input :start_date %>
