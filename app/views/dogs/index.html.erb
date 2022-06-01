@@ -23,7 +23,7 @@
           <%= f.input :location %>
           <%= f.collection_radio_buttons :sex, [[false, 'Male'], [true, 'Female']], :first, :last %>
           <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-          <%= f.button :submit, class: "btn btn-success", value: "Add dog" %>
+          <%= f.button :submit, class: "create-dog-btn", value: "Add Dog" %>
         <% end %>
       </div>
     </div>
