@@ -4,7 +4,9 @@
      <h1><%= @dog.name %> </h1>
       <p>
         <% @dog.photos.each do |photo| %>
-         <%= cl_image_tag photo.key, height: 400, width: 600, crop: :fill %>
+          <div class="mb-2">
+            <%= cl_image_tag photo.key, height: 400, width: 600, crop: :fill, class: "rounded" %>
+          </div>
         <% end %>
       </p>
       <ul class="list-group list-group-flush">
