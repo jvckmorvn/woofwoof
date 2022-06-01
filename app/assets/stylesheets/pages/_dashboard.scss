@@ -1,0 +1,21 @@
+.mydog-display {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.mb-3 {
+  color: black;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  background-color: #849cb6;
+  text-align: center;
+  border-radius: 8px;
+  padding: 8px;
+  border: 2px solid #25394f;
+  margin-top: 16px;
+}

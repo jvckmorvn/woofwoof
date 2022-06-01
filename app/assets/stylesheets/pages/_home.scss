@@ -45,3 +45,30 @@
   padding: 16px;
   border: 3px solid #25394f;
 }
+
+.animate {
+  position: absolute;
+  animation: moveX 16s infinite, moveY 0.5s infinite;
+  font-size: 20px;
+}
+
+@keyframes moveX {
+  0% {
+    left: -1%
+  }
+  100% {
+    left: 101%
+  }
+}
+
+@keyframes moveY {
+  0% {
+    top: 89%
+  }
+  50% {
+    top: 91%
+  }
+  100% {
+    top: 89%
+  }
+}
