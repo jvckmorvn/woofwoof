@@ -1,7 +1,8 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 320px;
+  width: 320px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,8 +16,14 @@
   transition: 0.2s ease;
 }
 
+.dog-display {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
 .card-category:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .dog-card {
