@@ -19,17 +19,18 @@
             </div>
         <% end %>
       </div>
+
       <div class="col-4 mt-5">
-        <%= simple_form_for @dog do |f| %>
-          <h4 class="mb-3">Add a new dog</h4>
-          <%= f.input :name %>
-          <%= f.input :breed %>
-          <%= f.input :age %>
-          <%= f.input :location %>
-          <%= f.collection_radio_buttons :sex, [[false, 'Male '], [true, 'Female']], :first, :last %>
-          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-          <%= f.button :submit, class: "create-dog-btn", value: "Add Dog" %>
-        <% end %>
+        <h4 class="mb-3">Add a new dog</h4>
+          <%= simple_form_for @dog do |f| %>
+            <%= f.input :name %>
+            <%= f.input :breed %>
+            <%= f.input :age %>
+            <%= f.input :location %>
+            <%= f.collection_radio_buttons :sex, [[false, 'Male '], [true, 'Female']], :first, :last %>
+            <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+            <%= f.button :submit, class: "create-dog-btn", value: "Add Dog" %>
+          <% end %>
       </div>
     </div>
   </div>

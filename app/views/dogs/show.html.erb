@@ -17,15 +17,15 @@
         <li class="list-group-item"><strong>Location:</strong> <%= @dog.location %></li>
       </ul>
       <br>
-      <p><%= link_to "Delete",dog_path(@dog), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-dog-btn"  %></p>
+      <p><%= link_to "Delete", dog_path(@dog), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-dog-btn"  %></p>
     </div>
 
     <div class="col-4 mt-5">
       <h4>Create new booking</h4>
         <%= simple_form_for [@dog, @booking] do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <%= f.button :submit, class: "create-dog-btn" %>
+          <%= f.input :start_date %>
+          <%= f.input :end_date %>
+          <%= f.button :submit, class: "create-dog-btn" %>
         <% end %>
     </div>
   </div>
