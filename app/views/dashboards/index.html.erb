@@ -4,8 +4,15 @@
     <div class="row mt-5">
       <div class="col-6">
         <h3>My Dogs</h3>
-        <% current_user.dogs.each do |dog| %>
-          <%= dog.name %>
+        <% if current_user.dogs.empty? %>
+          <div class="mt-5">
+            <h3>No dogs added</h3>
+          </div>
+        <% else current_user.dogs.each do |dog| %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path dog.photos[0].key %>)">
+            <%= link_to dog.name, dog_path(dog), style: "text-decoration: none; color: white;" %>
+          </div>
+          <% end %>
         <% end %>
       </div>
       <div class="col-6">
