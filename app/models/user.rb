@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  # has_many :dogs
+  has_many :dogs
   has_many :bookings
   has_one_attached :avatar
   validates :username, uniqueness: true
