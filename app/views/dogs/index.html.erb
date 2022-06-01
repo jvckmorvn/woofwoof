@@ -8,7 +8,7 @@
             <h3>No dogs added</h3>
           </div>
         <% else @dogs.each do |dog| %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_tag dog.photos[0] %>)">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(#{dog.photos[0]})">
             <%= link_to dog.name, dog_path(dog), class: "text-decoration-none" %>
           </div>
           <% end %>
