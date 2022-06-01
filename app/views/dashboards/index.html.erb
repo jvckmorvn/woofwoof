@@ -9,11 +9,14 @@
         <% end %>
       </div>
       <div class="col-6">
-        <h3>My Bookings</h3>
+        <h3 class="mb-3">My Bookings</h3>
         <% current_user.bookings.each do |booking| %>
-          <p><%= booking.start_date %></p>
-          <p><%= booking.end_date %></p>
-          <p><%= link_to "Delete", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-booking-btn" %></p>
+          <div class="mb-3">
+            <p>I've booked <strong><%= booking.dog.name %></strong></p>
+            <p><strong>From:</strong> <%= booking.start_date %></p>
+            <p><strong>To:</strong> <%= booking.end_date %></p>
+            <p><%= link_to "Delete", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none" %></p>
+          </div>
         <% end %>
       </div>
     </div>
