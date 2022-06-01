@@ -4,5 +4,3 @@ Rails.application.routes.draw do
   resources :dogs, only: %i[index show create] do
     post "bookings", to: "bookings#create"
   end
-  delete "bookings/:id", to: "bookings#destroy"
-end
