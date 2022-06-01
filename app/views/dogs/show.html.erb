@@ -16,7 +16,7 @@
 
     <div class = "col-4">
       <h1>Create new booking</h1>
-        <%= simple_form_for @booking do |f| %>
+        <%= simple_form_for([@dog, @booking]) do |f| %>
         <%= f.input :start_date %>
         <%= f.input :end_date %>
         <%= f.button :submit, class: "btn btn-primary" %>

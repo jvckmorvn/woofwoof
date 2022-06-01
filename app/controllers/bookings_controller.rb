@@ -7,6 +7,11 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.dog = Dog.find(params[:dog_id])
     @booking.user = current_user
+    if @booking.save!
+      redirect_to dogs_path
+    else
+      render :new, :unprocessable_entity
+    end
   end
 
   def destroy

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  resources :dogs, only: %i[index show create]
-  get "bookings/new", to: "bookings#new"
-  post "bookings", to: "bookings#create"
-  delete "bookings/:id", to: "bookings#destroy"
+  resources :dogs, only: %i[index show create] do
+    resources :bookings, only: [:create]
+  end
+  resources :bookings, only: [:show, :destroy]
+  resources :dashboards
 end
