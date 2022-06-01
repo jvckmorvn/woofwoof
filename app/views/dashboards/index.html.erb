@@ -11,8 +11,9 @@
       <div class="col-6">
         <h3>My Bookings</h3>
         <% current_user.bookings.each do |booking| %>
-          <%= booking.start_date %>
-          <%= booking.end_date %>
+          <p><%= booking.start_date %></p>
+          <p><%= booking.end_date %></p>
+          <p><%= link_to "Delete", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-booking-btn" %></p>
         <% end %>
       </div>
     </div>
