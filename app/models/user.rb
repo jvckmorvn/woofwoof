@@ -6,5 +6,5 @@ class User < ApplicationRecord
   has_many :dogs
   has_many :bookings
   has_one_attached :avatar
-  validates :username, uniqueness: true
+  validates :email, uniqueness: true
 end
