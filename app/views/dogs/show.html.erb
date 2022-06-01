@@ -1,29 +1,31 @@
-<div class="mt-3">
-  <div class="container">
-    <div class="row">
-      <div class="col-8">
-        <h1><%= @dog.name %> </h1>
-        <p>
-          <% @dog.photos.each do |photo| %>
-           <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-          <% end %>
-        </p>
-        <p>Name: <%= @dog.name %></p>
-        <p>Breed: <%= @dog.breed %></p>
-        <p>Age: <%= @dog.age %></p>
-        <p>Sex: <%= @dog.sex ? "Female" : "Male" %></p>
-        <p>Location: <%= @dog.location %></p>
-        <p><%= link_to "Delete",dog_path(@dog), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
-      </div>
+<div class="container">
+  <div class="dog-row">
+    <div class="dog-card">
+     <h1><%= @dog.name %> </h1>
+      <p>
+        <% @dog.photos.each do |photo| %>
+         <%= cl_image_tag photo.key, height: 400, width: 600, crop: :fill %>
+        <% end %>
+      </p>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Name: <%= @dog.name %></li>
+        <li class="list-group-item">Breed: <%= @dog.breed %></li>
+        <li class="list-group-item">Age: <%= @dog.age %></li>
+        <li class="list-group-item">Sex: <%= @dog.sex ? "Female" : "Male" %></li>
+        <li class="list-group-item">Location: <%= @dog.location %></li>
+      </ul>
+      <br>
+      <p><%= link_to "Delete",dog_path(@dog), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-dog-btn"  %></p>
+    </div>
 
-      <div class="col-4 mt-5">
-        <h4 class="mb-3">Create new booking</h4>
-          <%= simple_form_for [@dog, @booking] do |f| %>
-          <%= f.input :start_date %>
-          <%= f.input :end_date %>
-          <%= f.button :submit, class: "btn btn-primary" %>
-          <% end %>
-          <p class="mt-3" id="notice"><%= notice %></p>
+    <div class="col-4">
+      <h4>Create new booking</h4>
+        <%= simple_form_for @booking do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.button :submit, class: "create-dog-btn" %>
+        <% end %>
+      <p class="mt-3" id="notice"><%= notice %></p>
       </div>
     </div>
   </div>
