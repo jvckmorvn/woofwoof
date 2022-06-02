@@ -3,6 +3,14 @@
     <div class="row">
       <div class="col-8">
         <h1>Browse dogs</h1>
+          <%= form_tag dogs_path, method: :get, class: "d-flex" do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Find a dog"
+            %>
+            <%= submit_tag "Search", class: "btn btn-primary" %>
+          <% end %>
           <% if @dogs.empty? %>
           <div class="mt-5">
             <h3>No dogs added</h3>
@@ -27,9 +35,9 @@
       <div class="col-4 mt-5">
         <h4 class="mb-3">Add a new dog</h4>
           <%= simple_form_for @dog do |f| %>
-            <%= f.input :name %>
-            <%= f.input :breed %>
-            <%= f.input :age %>
+            <%= f.input :name, placeholder: "Uni" %>
+            <%= f.input :breed, placeholder: "Brussels Griffon" %>
+            <%= f.input :age, placeholder: "3" %>
             <%= f.input :location,
               input_html: {data: {location_autocomplete_target: "location"}, class: "d-none"},
               wrapper_html: {data: {controller: "location-autocomplete", location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
