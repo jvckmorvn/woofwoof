@@ -1,39 +1,35 @@
-<div class="mt-3">
-  <div class="container">
-  <br>
-    <h1>My Dashboard</h1>
-    <div class="row mt-5">
-      <div class="col-6">
-        <h3 class="mb-3">My Dogs</h3><br>
-        <% if current_user.dogs.empty? %>
-          <div class="mt-5">
-            <p>No dogs added</p>
-          </div>
-        <% else %>
-          <div class="mydog-display">
-        <% current_user.dogs.each do |dog| %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path dog.photos[0].key %>)">
-            <%= link_to dog.name, dog_path(dog), style: "text-decoration: none; color: white;" %>
-          </div>
+<div class="container">
+  <h1>My Dashboard</h1><br>
+  <div class="dashboard">
+    <div class="dashboard-my-dogs">
+      <h3>My Dogs</h3><br>
+      <% if current_user.dogs.empty? %>
+        <p>No dogs added</p>
+      <% else %>
+        <div class="mydog-display">
+          <% current_user.dogs.each do |dog| %>
+            <div class="my-dog-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path dog.photos[0].key %>)">
+              <%= link_to dog.name, dog_path(dog), style: "text-decoration: none; color: white;" %>
+            </div>
           <% end %>
+        </div>
         <% end %>
-      </div>
-      <div class="col-6">
-        <h3 class="mb-3">My Bookings</h3>
-        <% if current_user.bookings.empty? %>
-          <div class="mt-5">
-            <p>No bookings created</p>
-          </div>
-        <% else current_user.bookings.each do |booking| %>
-          <div class="mb-3">
+    </div>
+    <div class="dashboard-bookings">
+      <h3>My Bookings</h3><br>
+      <% if current_user.bookings.empty? %>
+        <p>No bookings created</p>
+      <% else current_user.bookings.each do |booking| %>
+        <div class="dashboard-booking-card">
+          <div class="dashboard-booking-photo" style="background-image: url(<%= cl_image_path booking.dog.photos[0].key %>)"></div>
+          <div class="dashboard-booking-text-pairing">
             <p>I've booked <strong><%= booking.dog.name %></strong></p>
-            <p><strong>From:</strong> <%= booking.start_date %></p>
-            <p><strong>To:</strong> <%= booking.end_date %></p>
-            <p><%= link_to "Delete", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none" %></p>
+            <p><strong>From:</strong> <%= booking.start_date %> <strong>To:</strong> <%= booking.end_date %></p>
           </div>
-          <% end %>
+          <p><%= link_to raw("<i class='fa-solid fa-xmark'></i>"), dashboards_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none" %></p>
+        </div>
         <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
