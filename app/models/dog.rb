@@ -7,4 +7,12 @@ class Dog < ApplicationRecord
   validates :age, presence: true
   validates :location, presence: true
   validates :photos, presence: true
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
+  include PgSearch::Model
+    pg_search_scope :search_by_breed_and_location,
+      against: [ :breed, :location ],
+      using: {
+        tsearch: { prefix: true }
+      }
 end

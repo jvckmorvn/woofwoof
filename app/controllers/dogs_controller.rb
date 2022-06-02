@@ -1,7 +1,18 @@
 class DogsController < ApplicationController
   def index
-    @dogs = Dog.all
-    @dog = Dog.new
+    if params[:query].present?
+      @dogs = Dog.search_by_breed_and_location(params[:query])
+    else
+      @dogs = Dog.all
+    end
+      @dog = Dog.new
+      @markers = @dogs.geocoded.map do |dog|
+          {
+            lat: dog.latitude,
+            lng: dog.longitude,
+            info_window: render_to_string(partial: "info_window", locals: {dog: dog})
+          }
+      end
   end
 
   def create
