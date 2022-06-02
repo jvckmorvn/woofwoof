@@ -24,13 +24,16 @@
             <div class="row">
               <div class="dog-display">
                 <% @dogs.each do |dog| %>
-                  <div class="dog-card">
-                    <div class="browsing-dog-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path dog.photos[0].key %>)"></div>
-                    <div class="info-dog-card">
-                    <strong> <%= link_to dog.name, dog_path(dog), style: "text-decoration: none; color: black;" %></strong>
-                    📍<%= link_to dog.location, dog_path(dog), style: "text-decoration: none; color: black;" %>
+                  <%= link_to dog_path(dog), style: "text-decoration: none; color: black;" do %>
+                    <div class="dog-card">
+                      <div class="browsing-dog-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path dog.photos[0].key %>)">
+                      </div>
+                      <div class="info-dog-card">
+                      <strong> <%= dog.name %></strong>
+                      📍<%= dog.location %>
+                      </div>
                     </div>
-                  </div>
+                    <% end %>
                 <% end %>
               </div>
             </div>
