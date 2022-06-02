@@ -40,6 +40,7 @@
           <li class="list-group-item"><strong>Age:</strong> <%= @dog.age %></li>
           <li class="list-group-item"><strong>Sex:</strong> <%= @dog.sex ? "Female" : "Male" %></li>
           <li class="list-group-item"><strong>Location:</strong> <%= @dog.location %></li>
+          <li class="list-group-item"><strong>Description:</strong> <%= @dog.description %></li>
         </ul>
         <br>
       <p><%= link_to "Delete", dog_path(@dog), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-dog-btn"  %></p>
