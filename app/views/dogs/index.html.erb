@@ -29,10 +29,10 @@
       <div class="col-4 mt-5">
         <h4 class="mb-3">Add a new dog</h4>
           <%= simple_form_for @dog do |f| %>
-            <%= f.input :name %>
-            <%= f.input :breed %>
-            <%= f.input :age %>
-            <%= f.input :location %>
+            <%= f.input :name, placeholder: "What's your dog name?"%>
+            <%= f.input :breed, placeholder: "Any"%>
+            <%= f.input :age, placeholder: "Any"%>
+            <%= f.input :location, placeholder: "City, State"%>
             <%= f.collection_radio_buttons :sex, [[false, 'Male '], [true, 'Female']], :first, :last %>
             <%= f.input :photos, as: :file, input_html: { multiple: true } %>
             <%= f.button :submit, class: "create-dog-btn", value: "Add Dog" %>
