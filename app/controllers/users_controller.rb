@@ -1,5 +1,5 @@
-class DashboardsController < ApplicationController
-  def index
+class UsersController < ApplicationController
+  def dashboard
     @dogs = current_user.dogs
     @bookings = current_user.bookings
   end
