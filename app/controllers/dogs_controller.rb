@@ -1,7 +1,11 @@
 class DogsController < ApplicationController
   def index
-    @dogs = Dog.all
-    @dog = Dog.new
+    if params[:query].present?
+      @dogs = Dog.search_by_breed_and_location(params[:query])
+    else
+      @dogs = Dog.all
+    end
+      @dog = Dog.new
   end
 
   def create
