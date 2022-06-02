@@ -4,5 +4,11 @@
 
 import { application } from "./application"
 
-import HelloController from "./hello_controller"
+import HelloController from "./hello_controller.js"
 application.register("hello", HelloController)
+
+import LocationAutocompleteController from "./location_autocomplete_controller.js"
+application.register("location-autocomplete", LocationAutocompleteController)
+
+import MapController from "./map_controller.js"
+application.register("map", MapController)
