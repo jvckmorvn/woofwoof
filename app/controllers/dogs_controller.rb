@@ -6,6 +6,13 @@ class DogsController < ApplicationController
       @dogs = Dog.all
     end
       @dog = Dog.new
+      @markers = @dogs.geocoded.map do |dog|
+          {
+            lat: dog.latitude,
+            lng: dog.longitude,
+            info_window: render_to_string(partial: "info_window", locals: {dog: dog})
+          }
+      end
   end
 
   def create
