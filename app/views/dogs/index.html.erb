@@ -27,7 +27,7 @@
       </div>
 
       <div class="col-4 mt-5">
-        <div class="row mb-5">
+        <div class="row mb-3">
           <div style="width: 100%; height: 600px;"
           data-controller="map"
           data-map-markers-value="<%= @markers.to_json %>"
@@ -36,7 +36,7 @@
         </div>
         <div class="row mb-3" style="background-color: #F7F7F7; border-radius: 8px; padding: 8px;">
           <h4 class="mb-3">Add a new dog</h4>
-            <%= simple_form_for @dog do |f| %>
+            <%= simple_form_for (@dog) do |f| %>
               <%= f.input :name, placeholder: "Uni" %>
               <%= f.input :breed, placeholder: "Brussels Griffon" %>
               <%= f.input :age, placeholder: "3" %>
