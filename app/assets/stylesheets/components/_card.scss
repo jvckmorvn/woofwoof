@@ -1,5 +1,4 @@
-
-.container{
+.container {
   margin-top: 20px;
 }
 
@@ -14,10 +13,10 @@
   color: white;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   margin-bottom: 4px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   transition: 0.2s ease;
 }
 
@@ -40,7 +39,13 @@
   // padding: 1rem 1rem;
 }
 
-.info-dog-card{
+.carousel-dog-card {
+  width: 600px;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+.info-dog-card {
   height: 100px;
   width: 300px;
   // margin-right: 30px;

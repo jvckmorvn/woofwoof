@@ -1,58 +1,51 @@
-<div class="container m-3">
-  <div class="dog-row">
+<div class="container m-3 dog-row">
+  <div class="carousel-dog-card">
 
-    <div class="dog-card">
+    <h1><%= @dog.name %> </h1>
 
-      <h1><%= @dog.name %> </h1>
-
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <% @dog.photos.each_with_index do |photo, index| %>
-            <div class="carousel-item <%='active' if index == 0%>">
-              <div class="mb-2">
-                <%= cl_image_tag photo.key, height: 400, width: 600, crop: :fill, class: "rounded" %>
-              </div>
-            </div>
-          <% end %>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
-
-        <p>
-
-        </p>
-
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><strong>Name:</strong> <%= @dog.name %></li>
-          <li class="list-group-item"><strong>Breed:</strong> <%= @dog.breed %></li>
-          <li class="list-group-item"><strong>Age:</strong> <%= @dog.age %></li>
-          <li class="list-group-item"><strong>Sex:</strong> <%= @dog.sex ? "Female" : "Male" %></li>
-          <li class="list-group-item"><strong>Location:</strong> <%= @dog.location %></li>
-          <li class="list-group-item"><strong>Description:</strong> <%= @dog.description %></li>
-        </ul>
-        <br>
-      <p><%= link_to "Delete", dog_path(@dog), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-dog-btn"  %></p>
-    </div>
-
-    <div class="col-4 mt-5">
-      <h4>Create new booking</h4>
-        <%= simple_form_for [@dog, @booking] do |f| %>
-          <%= f.input :start_date %>
-          <%= f.input :end_date %>
-          <%= f.button :submit, class: "create-dog-btn" %>
+      <div class="carousel-inner">
+        <% @dog.photos.each_with_index do |photo, index| %>
+          <div class="carousel-item <%='active' if index == 0%>">
+            <div class="mb-2">
+              <%= cl_image_tag photo.key, height: 400, width: 600, crop: :fill, class: "rounded" %>
+            </div>
+          </div>
         <% end %>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
+
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>Name:</strong> <%= @dog.name %></li>
+        <li class="list-group-item"><strong>Breed:</strong> <%= @dog.breed %></li>
+        <li class="list-group-item"><strong>Age:</strong> <%= @dog.age %></li>
+        <li class="list-group-item"><strong>Sex:</strong> <%= @dog.sex ? "Female" : "Male" %></li>
+        <li class="list-group-item"><strong>Location:</strong> <%= @dog.location %></li>
+        <li class="list-group-item"><strong>Description:</strong> <%= @dog.description %></li>
+      </ul>
+      <br>
+    <p><%= link_to "Delete", dog_path(@dog), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-dog-btn"  %></p>
+  </div>
+
+  <div class="col-4 mt-5">
+    <h4>Create new booking</h4>
+      <%= simple_form_for [@dog, @booking] do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.button :submit, class: "create-dog-btn" %>
+      <% end %>
   </div>
 </div>
