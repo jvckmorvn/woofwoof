@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to dogs_path(@dog), status: :see_other
+    redirect_to dashboard_path, status: :see_other
   end
 
   private
