@@ -40,11 +40,13 @@
   </div>
 
   <div class="col-4 mt-5">
-    <h4>Create new booking</h4>
-      <%= simple_form_for [@dog, @booking] do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <%= f.button :submit, class: "create-booking-btn" %>
-      <% end %>
+    <div class="woofwoof-form">
+      <h4>Create new booking</h4>
+        <%= simple_form_for [@dog, @booking] do |f| %>
+          <%= f.input :start_date %>
+          <%= f.input :end_date %>
+          <%= f.button :submit, class: "create-booking-btn" %>
+        <% end %>
+    </div>
   </div>
 </div>
