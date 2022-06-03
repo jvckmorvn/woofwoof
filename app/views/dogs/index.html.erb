@@ -40,6 +40,7 @@
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+
     </div>
     <h4 class="mb-3 mt-3">Add a new dog</h4>
       <%= simple_form_for (@dog) do |f| %>
