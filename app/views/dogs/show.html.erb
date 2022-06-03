@@ -28,7 +28,7 @@
       </button>
     </div>
 
-      <ul class="list-group list-group-flush rounded">
+      <ul class="list-group list-group-flush rounded border">
         <li class="list-group-item"><strong>Breed:</strong> <%= @dog.breed %></li>
         <li class="list-group-item"><strong>Age:</strong> <%= @dog.age %></li>
         <li class="list-group-item"><strong>Sex:</strong> <%= @dog.sex ? "Female" : "Male" %></li>
@@ -39,8 +39,8 @@
     <p><%= link_to "Delete", dog_path(@dog), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-dog-btn" %></p>
   </div>
 
-  <div class="col-4 mt-5">
-    <div class="woofwoof-form">
+  <div class="col-4 mt-5 d-flex flex-column">
+    <div class="woofwoof-form border">
       <h4>Create new booking</h4>
         <%= simple_form_for [@dog, @booking] do |f| %>
           <%= f.input :start_date %>
@@ -48,12 +48,16 @@
           <%= f.button :submit, class: "create-booking-btn" %>
         <% end %>
     </div>
-    <div class="woofwoof-form mt-4">
-      <h4>About the owner</h4>
-      <img src="<%= cl_image_path @dog.user.avatar.key %>" alt="<%= @dog.user.username %>" class="avatar-large">
-      <p><strong>Username: </strong><%= @dog.user.username %></p>
-      <p><strong>Dogs: </strong><%= @dog.user.dogs.count %></p>
-      <p><strong>Member since: </strong><%= @dog.user.created_at.to_s.split[0] %></p>
+    <div class="woofwoof-form mt-4 align-self-center border py-4" style="width: 60%">
+      <div class="d-flex flex-column align-items-center">
+        <h4>About the owner</h4>
+        <img src="<%= cl_image_path @dog.user.avatar.key %>" alt="<%= @dog.user.username %>" class="avatar-large border">
+        <div class="info mt-3">
+          <p><strong>Username: </strong><%= @dog.user.username %></p>
+          <p><strong>Dogs: </strong><%= @dog.user.dogs.count %></p>
+          <p><strong>Member since: </strong><%= @dog.user.created_at.to_s.split[0] %></p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
