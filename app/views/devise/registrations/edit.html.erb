@@ -5,7 +5,7 @@
     <% else %>
       <%= image_tag "default_user_avatar.jpg", class: "avatar-large dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
     <% end %>
-    <h2 class="my-3"><%= current_user.username %></h2>
+    <h2 class="mb-5"><%= current_user.username %></h2>
   </div><br>
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
@@ -34,7 +34,7 @@
     </div>
   <% end %>
   <div class="mt-5">
-    <h3 class="mb-3">DANGER ZONE <i class="fa-solid fa-bolt"></i></h3>
+    <h3 class="mb-3">DANGER ZONE <i class="fa-solid fa-bolt"></i></h3>¥
     <p><%= link_to "Delete my account", registration_path(resource_name), data: { turbo_method: :delete, confirm: "Are you sure?" }, class: "delete-btn" %></p>
   </div>
 </div>

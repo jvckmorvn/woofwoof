@@ -9,12 +9,16 @@
         <% else %>
           <div class="mydog-display">
             <% current_user.dogs.each do |dog| %>
-              <div class="my-dog-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path dog.photos[0].key %>)">
-                <%= link_to dog.name, dog_path(dog), style: "text-decoration: none; color: white;" %>
-              </div>
+              <%= link_to dog_path(dog), style: "text-decoration: none; color: black;" do %>
+                <div class="my-dog-card">
+                  <div class="my-dog-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path dog.photos[0].key %>)">
+                    <%= dog.name %>
+                  </div>
+                </div>
+              <% end %>
             <% end %>
           </div>
-          <% end %>
+        <% end %>
       </div>
       <div class="dashboard-bookings">
         <h3>My Bookings</h3><br>

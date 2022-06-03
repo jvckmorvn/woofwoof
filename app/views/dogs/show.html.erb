@@ -1,7 +1,7 @@
 <div class="container m-3 dog-row">
   <div class="carousel-dog-card">
 
-    <h1><%= @dog.name %> </h1>
+    <h1><strong>Hi, I'm <%= @dog.name %> <i class="fa-regular fa-face-smile"></i></strong></h1>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
@@ -28,8 +28,7 @@
       </button>
     </div>
 
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item"><strong>Name:</strong> <%= @dog.name %></li>
+      <ul class="list-group list-group-flush rounded">
         <li class="list-group-item"><strong>Breed:</strong> <%= @dog.breed %></li>
         <li class="list-group-item"><strong>Age:</strong> <%= @dog.age %></li>
         <li class="list-group-item"><strong>Sex:</strong> <%= @dog.sex ? "Female" : "Male" %></li>
@@ -37,7 +36,7 @@
         <li class="list-group-item"><strong>Description:</strong> <%= @dog.description %></li>
       </ul>
       <br>
-    <p><%= link_to "Delete", dog_path(@dog), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-dog-btn"  %></p>
+    <p><%= link_to "Delete", dog_path(@dog), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-dog-btn" %></p>
   </div>
 
   <div class="col-4 mt-5">

@@ -1,7 +1,7 @@
 <div class="container m-3 browse-dogs-row">
-  <div class="browse-dogs-list">
+  <div class="browse-dogs-list pe-5">
     <h1>Browse dogs</h1>
-      <%= form_tag dogs_path, method: :get, class: "d-flex" do %>
+      <%= form_tag dogs_path, method: :get, class: "d-flex mt-3" do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
@@ -14,7 +14,7 @@
         <h3>No dogs added</h3>
       </div>
     <% else %>
-      <div class="dog-display mt-3">
+      <div class="dog-display mt-4">
         <% @dogs.each do |dog| %>
           <%= link_to dog_path(dog), style: "text-decoration: none; color: black;" do %>
             <div class="dog-card">
@@ -41,7 +41,7 @@
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-    <h4 class="mb-3 mt-3">Add a new dog</h4>
+    <h4 class="mb-2 mt-4">Add a new dog</h4>
       <%= simple_form_for (@dog) do |f| %>
         <%= f.input :name, placeholder: "Uni" %>
         <%= f.input :breed, placeholder: "Brussels Griffon" %>
@@ -50,6 +50,7 @@
           input_html: {data: {location_autocomplete_target: "location"}, class: "d-none"},
           wrapper_html: {data: {controller: "location-autocomplete", location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
         %>
+        <%= f.input :description, placeholder: "Description" %>
         <%= f.collection_radio_buttons :sex, [[false, 'Male '], [true, 'Female']], :first, :last %>
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.button :submit, class: "create-dog-btn", value: "Add Dog" %>
