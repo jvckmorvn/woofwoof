@@ -1,4 +1,4 @@
-<div class="container m-3">
+<div class="container m-3 my-4">
   <div class="edit-avatar-and-id">
     <% if current_user.avatar.attached? %>
       <%= cl_image_tag current_user.avatar.key, class: "avatar-large dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
