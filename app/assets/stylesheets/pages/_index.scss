@@ -1,5 +1,10 @@
 // Import page-specific CSS files here.
 @import "home";
-@import "form";
 @import "dog_show";
+@import "dog_index";
 @import "dashboard";
+@import "profile";
+
+p {
+  margin: 0 !important;
+}

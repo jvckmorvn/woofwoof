@@ -1,0 +1,20 @@
+.browse-dogs-row {
+  display: flex;
+  max-width: 100vw;
+  width: 100vw;
+  justify-content: center;
+  gap: 48px;
+}
+
+.browse-dogs-list {
+  // flex-grow: 2;
+}
+
+.browse-dogs-new {
+  // flex-grow: 1;
+  padding-top: 54px;
+}
+
+.mapboxgl-ctrl {
+  margin: 0 !important;
+}
