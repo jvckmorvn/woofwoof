@@ -14,10 +14,9 @@
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  margin-bottom: 4px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  transition: 0.2s ease;
 }
 
 .dog-display {
@@ -26,17 +25,14 @@
   gap: 24px;
 }
 
-.browsing-dog-card:hover {
-  transform: scale(1.03);
-}
-
 .dog-card {
   width: 300px;
-  // margin-right: 30px;
-  // margin-left: 30px;
   border-radius: 8px;
-  // flex: 1 1 auto;
-  // padding: 1rem 1rem;
+  transition: 0.2s ease;
+}
+
+.dog-card:hover {
+  transform: scale(1.03);
 }
 
 .carousel-dog-card {
@@ -48,9 +44,8 @@
 .info-dog-card {
   height: 100px;
   width: 300px;
-  // margin-right: 30px;
-  // margin-left: 30px;
-  border-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
   flex: 1 1 auto;
   padding: 1rem 1rem;
   background-color: #DDDDDD;

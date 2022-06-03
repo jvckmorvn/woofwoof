@@ -1,3 +1,7 @@
 .dog-row {
   display: flex;
+  max-width: 100vw;
+  width: 100vw;
+  justify-content: center;
+  gap: 48px;
 }

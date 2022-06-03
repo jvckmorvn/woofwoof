@@ -21,8 +21,12 @@
               <div class="browsing-dog-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path dog.photos[0].key %>)">
               </div>
               <div class="info-dog-card">
-              <strong> <%= dog.name %></strong>
-              📍<%= dog.location %>
+              <p>
+                <i class="fa-solid fa-dog"></i> <strong> <%= dog.name %></strong>
+              </p>
+              <p>
+                <i class="fa-solid fa-location-dot"></i> <%= dog.location %>
+              </p>
               </div>
             </div>
             <% end %>
