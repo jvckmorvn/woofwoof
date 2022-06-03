@@ -55,7 +55,7 @@
         <div class="info mt-3">
           <p><strong>Username: </strong><%= @dog.user.username %></p>
           <p><strong>Dogs: </strong><%= @dog.user.dogs.count %></p>
-          <p><strong>Member since: </strong><%= @dog.user.created_at.to_s.split[0] %></p>
+          <p><strong>Member since: </strong><%= @dog.user.created_at.to_s.split[0].split("-").reverse.join(" / ") %></p>
         </div>
       </div>
     </div>
