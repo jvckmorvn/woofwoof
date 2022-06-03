@@ -48,5 +48,12 @@
           <%= f.button :submit, class: "create-booking-btn" %>
         <% end %>
     </div>
+    <div class="woofwoof-form mt-4">
+      <h4>About the owner</h4>
+      <img src="<%= cl_image_path @dog.user.avatar.key %>" alt="<%= @dog.user.username %>" class="avatar-large">
+      <p><strong>Username: </strong><%= @dog.user.username %></p>
+      <p><strong>Dogs: </strong><%= @dog.user.dogs.count %></p>
+      <p><strong>Member since: </strong><%= @dog.user.created_at.to_s.split[0] %></p>
+    </div>
   </div>
 </div>
