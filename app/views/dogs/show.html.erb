@@ -35,8 +35,10 @@
         <li class="list-group-item"><strong>Location:</strong> <%= @dog.location %></li>
         <li class="list-group-item"><strong>Description:</strong> <%= @dog.description %></li>
       </ul>
-      <br>
-    <p><%= link_to "Delete", dog_path(@dog), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-dog-btn" %></p>
+      <div class="buttons d-flex mt-3">
+        <p><%= link_to "Update", edit_dog_path(@dog), class: "update-dog-btn" %></p>
+        <p><%= link_to "Delete", dog_path(@dog), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-dog-btn" %></p>
+      </div>
   </div>
 
   <div class="col-4 mt-5 d-flex flex-column">
@@ -55,7 +57,7 @@
         <div class="info mt-3">
           <p><strong>Username: </strong><%= @dog.user.username %></p>
           <p><strong>Dogs: </strong><%= @dog.user.dogs.count %></p>
-          <p><strong>Member since: </strong><%= @dog.user.created_at.to_s.split[0].split("-").reverse.join(" / ") %></p>
+          <p><strong>Member since: </strong><%= @dog.user.created_at.to_s.split[0].split("-").reverse.join("/") %></p>
         </div>
       </div>
     </div>

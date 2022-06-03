@@ -1,0 +1,41 @@
+<div class="d-flex justify-content-around">
+  <div class="woofwoof-form mt-4 border" style="width: 30%;">
+    <h4 class="mb-2">Update your dog's details</h4>
+      <%= simple_form_for @dog do |f| %>
+        <%= f.input :name, placeholder: @dog.name %>
+        <%= f.input :breed, placeholder: @dog.breed %>
+        <%= f.input :age, placeholder: @dog.age %>
+        <%= f.input :location,
+          input_html: {data: {location_autocomplete_target: "location"}, class: "d-none"},
+          wrapper_html: {data: {controller: "location-autocomplete", location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
+        %>
+        <%= f.input :description, placeholder: @dog.description %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.button :submit, class: "update-dog-btn", value: "Update Dog" %>
+      <% end %>
+  </div>
+  <div id="carouselExampleIndicators" class="carousel slide p-4 mt-4" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <% @dog.photos.each_with_index do |photo, index| %>
+        <div class="carousel-item <%='active' if index == 0%>">
+          <div class="mb-2">
+            <%= cl_image_tag photo.key, height: 600, width: 900, crop: :fill, class: "rounded" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>

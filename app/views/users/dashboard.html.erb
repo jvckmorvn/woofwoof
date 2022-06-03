@@ -29,8 +29,8 @@
             <div class="dashboard-booking-photo" style="background-image: url(<%= cl_image_path booking.dog.photos[0].key %>)"></div>
             <div class="dashboard-booking-text-pairing">
               <p>You've booked <strong><%= booking.dog.name %></strong></p>
-              <p><strong>From:</strong> <%= booking.start_date.to_s.split[0].split("-").reverse.join(" / ") %></p>
-              <p><strong>To:</strong> <%= booking.end_date.to_s.split[0].split("-").reverse.join(" / ") %></p>
+              <p><strong>From:</strong> <%= booking.start_date.to_s.split[0].split("-").reverse.join("/") %></p>
+              <p><strong>To:</strong> <%= booking.end_date.to_s.split[0].split("-").reverse.join("/") %></p>
             </div>
             <p><%= link_to raw("<i class='fa-solid fa-xmark'></i>"), booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none" %></p>
           </div>
