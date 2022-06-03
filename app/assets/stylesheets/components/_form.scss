@@ -1,10 +1,3 @@
-.new-root {
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
-  margin-left: 12px;
-}
-
 .new-dog {
   display: flex;
   flex-direction: column;
@@ -16,5 +9,8 @@
   display: flex;
   flex-direction: column;
   max-width: 400px;
-  margin-left: 12px;
+}
+
+.form-control {
+  max-width: 600px;
 }
