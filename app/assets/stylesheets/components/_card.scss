@@ -5,7 +5,7 @@
 .browsing-dog-card {
   background-size: cover;
   background-position: center;
-  height: 320px;
+  height: 300px;
   width: 300px;
   display: flex;
   justify-content: center;
@@ -21,8 +21,8 @@
 
 .dog-display {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
 }
 
 .dog-card {
@@ -46,7 +46,7 @@
 }
 
 .info-dog-card {
-  height: 100px;
+  height: 80px;
   width: 300px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;

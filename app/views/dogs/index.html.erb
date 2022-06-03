@@ -1,5 +1,5 @@
-<div class="container m-3 browse-dogs-row">
-  <div class="browse-dogs-list pe-5">
+<div class="container browse-dogs-row">
+  <div class="browse-dogs-list" style="width: 60vw;">
     <h1>Browse dogs</h1>
       <%= form_tag dogs_path, method: :get, class: "d-flex mt-3" do %>
         <%= text_field_tag :query,
@@ -25,7 +25,7 @@
                 <i class="fa-solid fa-dog"></i> <strong> <%= dog.name %></strong>
               </p>
               <p>
-                <i class="fa-solid fa-location-dot"></i> <%= dog.location %>
+                <i class="fa-solid fa-location-dot"></i> <%= dog.location.length > 28 ? dog.location[0..26]... : dog.location %>
               </p>
               </div>
             </div>
