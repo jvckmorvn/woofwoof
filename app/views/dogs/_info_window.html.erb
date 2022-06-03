@@ -1,2 +1,5 @@
-<h2><%= dog.name %></h2>
-<p><%= dog.location %></p>
+<div style="border-radius: 8px;">
+  <img src="<%= cl_image_path dog.photos[0].key %>" alt="<%= dog.name %>", class="avatar my-2">
+  <p><strong><%= dog.name %></strong></p>
+  <p><%= dog.location.split(",")[0] %></p>
+</div>
