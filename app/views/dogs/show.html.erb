@@ -1,7 +1,7 @@
 <div class="container m-3 dog-row">
   <div class="carousel-dog-card">
 
-    <h1><strong></strong><%= @dog.name %> </h1>
+    <h1><strong>Hi, I'm <%= @dog.name %> <i class="fa-regular fa-face-smile"></i> </strong></h1>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
@@ -29,7 +29,6 @@
     </div>
 
       <ul class="list-group list-group-flush">
-        <li class="list-group-item"><strong>Name:</strong> <%= @dog.name %></li>
         <li class="list-group-item"><strong>Breed:</strong> <%= @dog.breed %></li>
         <li class="list-group-item"><strong>Age:</strong> <%= @dog.age %></li>
         <li class="list-group-item"><strong>Sex:</strong> <%= @dog.sex ? "Female" : "Male" %></li>
