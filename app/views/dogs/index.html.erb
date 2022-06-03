@@ -41,7 +41,7 @@
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-    <div class="woofwoof-form mt-4">
+    <div class="woofwoof-form mt-4 border">
       <h4 class="mb-2">Add a new dog</h4>
         <%= simple_form_for @dog do |f| %>
           <%= f.input :name, placeholder: "Uni" %>
