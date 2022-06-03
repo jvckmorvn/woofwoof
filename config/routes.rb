@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: %i[show destroy]
   get "/dashboard", to: "users#dashboard"
+  resources :profiles, only: %i[edit destroy] do
+    resources :users, only: :create
+  end
 end
