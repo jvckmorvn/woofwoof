@@ -56,7 +56,7 @@
         <img src="<%= cl_image_path @dog.user.avatar.key %>" alt="<%= @dog.user.username %>" class="avatar-large border">
         <div class="info mt-3">
           <p><strong>Username: </strong><%= @dog.user.username %></p>
-          <p><strong>Dogs: </strong><%= @dog.user.dogs.count %></p>
+          <p><strong>Dogs: </strong><%= @dog.user.dogs.count.to_s %></p>
           <p><strong>Member since: </strong><%= @dog.user.created_at.to_s.split[0].split("-").reverse.join("/") %></p>
         </div>
       </div>
