@@ -10,5 +10,3 @@ Welcome to our dog sharing platform! Here's how it works: create an account on t
 - Run `bundle install` in your terminal to install the necessary gems and dependencies.
 - Run `rails db:create db:migrate` in your terminal to set up the database.
 - Finally, run `rails server` and navigate to 'localhost:3000' in your web browser to start using the app!
-
-**NB:** If you have no interest in the source code of the app, feel free to visit it in its production environment instead at [WoofWoof](https://jvckmorvn-woofwoof.herokuapp.com/).
